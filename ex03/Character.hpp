@@ -2,26 +2,25 @@
  #define CHARACTER_HPP_
 
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-class Character : ICharacter
+class Character : public ICharacter
 {
 	public :
 	// Orthodox Canonical
 		Character();
+		Character(const std::string& name);
 		~Character();
 		Character(const Character & copyClass);
 		Character& operator=(const Character &other);
-
 		std::string const& getName() const;
 		void equip(AMateria* m);
-		void unequip(int idx) = 0;
-		void use(int idx, ICharacter& target) = 0;
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
 
 	private :
 		std::string	name_;
-		//AMateria slot_[4]; cloneと関係がありそうなので調べる
-
-
+		AMateria* slot_[4];
 };
 
 #endif

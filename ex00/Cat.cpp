@@ -2,13 +2,13 @@
 
 Cat::Cat()
 {
-	std::cout << "<Cat> Constructor" << std::endl;
+	std::cout << "<Cat> constructor" << std::endl;
 	type_ = "Cat";
 }
 
 Cat::~Cat()
 {
-	std::cout << "<Cat> Destructor" << std::endl;
+	std::cout << "<Cat> destructor" << std::endl;
 }
 
 Cat::Cat(const Cat& copyClass)

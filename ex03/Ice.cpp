@@ -1,9 +1,8 @@
 #include "Ice.hpp"
 
-Ice::Ice():AMateria("Materia")
+Ice::Ice():AMateria("ice")
 {
 	std::cout << "<Ice> constructor" << std::endl;
-	iceType_ = "ice";
 }
 
 Ice::~Ice()
@@ -22,12 +21,19 @@ Ice& Ice::operator=(const Ice& other)
 	std::cout << "<Ice> constructor" << std::endl;
 	if (this != &other)
 	{
-		iceType_ = other.iceType_;
+		type_ = other.type_;
 	}
+	return (*this);
 }
 
 Ice* Ice::clone() const
 {
 	Ice* cloneobject = new Ice();
 	cloneobject->setType(getType());
+	return (cloneobject);
+}
+
+std::string Ice::showType() const
+{
+	return (type_);
 }

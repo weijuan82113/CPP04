@@ -1,10 +1,8 @@
-
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Materia")
+Cure::Cure() : AMateria("cure")
 {
 	std::cout << "<Cure> constructor" << std::endl;
-	cureType_ = "cure";
 }
 
 Cure::~Cure()
@@ -23,12 +21,19 @@ Cure& Cure::operator=(const Cure& other)
 	std::cout << "<Cure> copy assignment" << std::endl;
 	if (this != &other)
 	{
-		cureType_ = other.cureType_;
+		type_ = other.type_;
 	}
+	return (*this);
 }
 
 Cure* Cure::clone() const
 {
 	Cure* clonedObject = new Cure();
 	clonedObject->setType(getType());
+	return (clonedObject);
+}
+
+std::string Cure::showType() const
+{
+	return (type_);
 }

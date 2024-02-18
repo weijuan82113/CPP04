@@ -12,7 +12,7 @@ Animal::~Animal()
 
 Animal::Animal(const Animal& copyClass)
 {
-	std::cout << "<Animal> Copy Constructor" << std::endl;
+	std::cout << "<Animal> Copy constructor" << std::endl;
 	*this = copyClass;
 }
 

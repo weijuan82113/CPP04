@@ -12,7 +12,7 @@ WrongAnimal::~WrongAnimal()
 
 WrongAnimal::WrongAnimal(const WrongAnimal& copyClass)
 {
-	std::cout << "<WrongAnimal> Copy Constructor" << std::endl;
+	std::cout << "<WrongAnimal> Copy constructor" << std::endl;
 	*this = copyClass;
 }
 

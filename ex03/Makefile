@@ -1,13 +1,15 @@
-NAME = Animal
+NAME = Interface_Recap
 
 # COMPILE FLAGS
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
-SRCS		=	main.cpp \
-				AMateria.cpp \
-				Character.cpp \
+SRCS		=	AMateria.cpp \
 				Cure.cpp \
 				Ice.cpp \
+				Character.cpp \
+				MateriaSource.cpp \
+				main.cpp \
+
 
 
 OBJS		= $(SRCS:%.cpp=%.o)

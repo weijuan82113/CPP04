@@ -12,7 +12,7 @@ Animal::~Animal()
 
 Animal::Animal(const Animal& copyClass)
 {
-	std::cout << "<Animal> Copy Constructor" << std::endl;
+	std::cout << "<Animal> Copy constructor" << std::endl;
 	*this = copyClass;
 }
 
@@ -26,10 +26,26 @@ Animal& Animal::operator=(const Animal& other)
 
 void Animal::makeSound() const
 {
-	std::cout << "tha Animal make some voice" << std::endl;
+	std::cout << "<Animal> make some voice" << std::endl;
+}
+
+void Animal::figureOut(const std::string& idea)
+{
+	std::cout << "<Animal> figure out" << idea << std::endl;
+}
+
+void Animal::showIdea() const
+{
+	std::cout << "<Animal> show idea" << std::endl;
 }
 
 std::string Animal::getType() const
 {
 	return (type_);
+}
+
+Brain* Animal::getBrain() const
+{
+	std::cout << "<Animal> getBrain" << std::endl;
+	return NULL;
 }

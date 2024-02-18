@@ -2,13 +2,13 @@
 
 WrongCat::WrongCat()
 {
-	std::cout << "<WrongCat> Constructor" << std::endl;
+	std::cout << "<WrongCat> constructor" << std::endl;
 	type_ = "WrongCat";
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << "<WrongCat> Destructor" << std::endl;
+	std::cout << "<WrongCat> destructor" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat& copyClass)

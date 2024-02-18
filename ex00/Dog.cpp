@@ -3,12 +3,12 @@
 
 Dog::Dog()
 {
-	std::cout << "<Dog> Constructor" << std::endl;
+	std::cout << "<Dog> constructor" << std::endl;
 	type_ = "Dog";
 }
 Dog::~Dog()
 {
-	std::cout << "<Dog> Destructor" << std::endl;
+	std::cout << "<Dog> destructor" << std::endl;
 }
 
 Dog::Dog(const Dog& copyClass)

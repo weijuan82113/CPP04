@@ -3,13 +3,11 @@ NAME = Animal
 # COMPILE FLAGS
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
-SRCS		=	main.cpp \
-				Animal.cpp \
+SRCS		=	AAnimal.cpp \
 				Cat.cpp \
 				Dog.cpp \
-				WrongAnimal.cpp \
-				WrongCat.cpp \
 				Brain.cpp \
+				main.cpp \
 
 OBJS		= $(SRCS:%.cpp=%.o)
 

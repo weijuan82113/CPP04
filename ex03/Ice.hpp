@@ -6,13 +6,14 @@
 class Ice : public AMateria
 {
 	public :
+	// Orthodox Canonical
 		Ice();
 		~Ice();
 		Ice(const Ice& copyClass);
 		Ice& operator=(const Ice& other);
 		Ice* clone() const;
+		std::string showType() const;
 	private :
-		std::string iceType_;
 
 };
 
