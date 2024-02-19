@@ -29,8 +29,5 @@ std::string const& AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	if (type_ == "ice")
-		std::cout << "* type_" << target.getName() << std::endl;
-	else if (type_ == "cure")
-		std::cout << "* heals " << target.getName() << "'s wounds" << std::endl;
+	std::cout << "<AMateria> use materia at" << target.getName() << std::endl;
 }

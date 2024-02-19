@@ -10,42 +10,48 @@ static void destructor() {
 
 int main()
 {
-	Cure* originalCure = new Cure();
-	Cure* Copied = originalCure->clone();
+	{
+		Cure* originalCure = new Cure();
+		Cure* Copied = originalCure->clone();
 
-	std::cout << "originalCure type : " << originalCure->showType() << "\n";
-	std::cout << "originalCure base type : " <<  originalCure->getType() << std::endl;
+		std::cout << "originalCure pointer : " << originalCure << "\n";
+		std::cout << "originalCure type : " << originalCure->showType() << "\n";
+		std::cout << "originalCure base type : " <<  originalCure->getType() << std::endl;
 
-	std::cout << "Copied type : " << Copied->showType() << "\n";
-	std::cout << "Copied base type : " << Copied->getType() << std::endl;
+		std::cout << "Copied pointer : " << Copied << "\n";
+		std::cout << "Copied type : " << Copied->showType() << "\n";
+		std::cout << "Copied base type : " << Copied->getType() << std::endl;
 
-	delete originalCure;
-	delete Copied;
-
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	// tmp = src->createMateria("cure");
-	// me->equip(tmp);
-	// delete (tmp);
-	me->unequip(3);
-	free(tmp);
-	ICharacter* bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
-	me->use(3, *bob);
-	delete bob;
-	delete me;
-	delete src;
+		delete originalCure;
+		delete Copied;
+	}
+	{
+		IMateriaSource* src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		ICharacter* me = new Character("me");
+		AMateria* tmp;
+		tmp = src->createMateria("ice");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		tmp = src->createMateria("ice");
+		me->equip(tmp);
+		AMateria* deleteTmp;
+		deleteTmp = src->createMateria("cure");
+		me->equip(deleteTmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		delete (tmp);
+		me->unequip(3);
+		free(deleteTmp);
+		ICharacter* bob = new Character("bob");
+		me->use(0, *bob);
+		me->use(1, *bob);
+		me->use(3, *bob);
+		delete bob;
+		delete me;
+		delete src;
+	}
 	return 0;
 }

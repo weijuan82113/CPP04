@@ -12,7 +12,7 @@ int main()
 {
 	AAnimal		*animals[4];
 	int			i;
-	//AAnimal	 	wrongAnimal;
+	//AAnimal	 	wrongAnimal; // Can not complie, not instantiable
 
 	for ( i = 0; i < 2; i++ )
 	{

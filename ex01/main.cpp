@@ -44,9 +44,8 @@ int main()
 	std::cout << "cats[1] show after figureOut : " << std::endl;
 	cats[1].showIdea();
 
-	std::cout << "Brain pointer value for cats[0] = " << cats[0].getBrain()
-		<< std::endl << "....................for cats[1] = "
-		<< cats[1].getBrain() << std::endl;
+	std::cout << "Brain pointer value for cats[0] = " << cats[0].getBrain() << "\n"
+		<< "....................for cats[1] = " << cats[1].getBrain() << std::endl;
 	cats[0] = cats[1];
 
 	std::cout << "cats[0] show after copy : " << std::endl;

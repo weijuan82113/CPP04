@@ -35,7 +35,7 @@ Cat& Cat::operator=(const Cat& other)
 
 void Cat::makeSound() const
 {
-	std::cout << "Maio Maio" << std::endl;
+	std::cout << "Miao Miao" << std::endl;
 }
 
 void Cat::figureOut(const std::string& idea)

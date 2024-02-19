@@ -14,7 +14,7 @@ class Brain
 		void makeIdea(const std::string &idea, int index);
 		const std::string* getIdeas() const;
 
-		protected :
+	protected :
 		std::string *ideas_;
 };
 

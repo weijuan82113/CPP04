@@ -2,6 +2,7 @@
  #define ICE_HPP_
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Ice : public AMateria
 {
@@ -13,6 +14,7 @@ class Ice : public AMateria
 		Ice& operator=(const Ice& other);
 		Ice* clone() const;
 		std::string showType() const;
+		void use(ICharacter& target);
 	private :
 
 };
