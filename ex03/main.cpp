@@ -42,9 +42,9 @@ int main()
 		me->equip(deleteTmp);
 		tmp = src->createMateria("cure");
 		me->equip(tmp);
-		delete (tmp);
+		delete(tmp);
 		me->unequip(3);
-		free(deleteTmp);
+		delete(deleteTmp);
 		ICharacter* bob = new Character("bob");
 		me->use(0, *bob);
 		me->use(1, *bob);

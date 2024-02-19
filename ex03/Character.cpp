@@ -3,13 +3,19 @@
 Character::Character()
 {
 	std::cout << "<Character> Default Constrctor" << std::endl;
-	*slot_ = NULL;
+	for (int i =  0; i < 4 ; i ++)
+	{
+		slot_[i] = NULL;
+	}
 }
 
 Character::Character(const std::string &name) : name_(name)
 {
 	std::cout << "<Character> Constrctor" << std::endl;
-	*slot_ = NULL;
+	for (int i =  0; i < 4 ; i ++)
+	{
+		slot_[i] = NULL;
+	}
 }
 
 Character::~Character()
