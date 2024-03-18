@@ -30,6 +30,7 @@ int main()
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
 		ICharacter* me = new Character("me");
+
 		AMateria* tmp;
 		tmp = src->createMateria("ice");
 		me->equip(tmp);
@@ -49,8 +50,23 @@ int main()
 		me->use(0, *bob);
 		me->use(1, *bob);
 		me->use(3, *bob);
+		std::cout << "------------------\n"
+		<< "me1 : pointer" << std::endl;
+		tmp = src->createMateria("cure");
+		Character* me1 = new Character("me1");
+		me1->equip(tmp);
+		me1->showMateria();
+		std::cout << "------------------" << std::endl;
+		Character* me2 = new Character("me2");
+		*me2 = *me1;
+		std::cout << "------------------\n"
+		<< "me2 : pointer" << std::endl;
+		me2->showMateria();
+		std::cout << "------------------" << std::endl;
 		delete bob;
 		delete me;
+		delete me1;
+		delete me2;
 		delete src;
 	}
 	return 0;

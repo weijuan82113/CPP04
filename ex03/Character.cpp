@@ -45,7 +45,9 @@ Character& Character::operator=(const Character &other)
 		int i = 0;
 		while (i < 4)
 		{
-			*slot_[i] = *other.slot_[i];
+			delete (slot_[i]);
+			if (other.slot_[i])
+				slot_[i] = other.slot_[i]->clone();
 			i ++;
 		}
 	}
@@ -83,4 +85,16 @@ void Character::use(int idx, ICharacter& target)
 		return ;
 	}
 	slot_[idx]->use(target);
+}
+
+void Character::showMateria()
+{
+	int i = 0;
+	while(i < 4)
+	{
+		std::cout << i << ":" << this->slot_[i] << "\n";
+		if (i == 3)
+			std::cout << std::endl;
+		i ++;
+	}
 }
